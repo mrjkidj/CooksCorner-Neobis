@@ -22,7 +22,6 @@ const Navbar: React.FC = () => {
       <div className={s.cooks_corner_link}>
         <img src={cooks_corner_link} alt="cooks_corner_link" />
       </div>
-       {/* Добавляем разделитель */}
       <div className={s.navbar_links}>
         <HomeLink to={"/"} />
         <SearchLink to={"/search"} />
