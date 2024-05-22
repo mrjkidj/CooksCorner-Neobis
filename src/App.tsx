@@ -15,32 +15,32 @@ import 'tailwindcss/tailwind.css';
 
 
 function App() {
-  const isAuth = useAppSelector((state) => state.auth.isAuth);
+  // const isAuth = useAppSelector((state) => state.auth.isAuth);
 
   return (
     <>
-      {isAuth ? (
+      {/* {isAuth ? ( */}
         <>
           <Navbar />
           <Routes>
             <Route path={"/"} element={<HomePage />} />
             <Route path={"/not-found"} element={<NotFoundPage />} />
             <Route path={"/recipe-detail"} element={<DetailRecipePage />} />
-            <Route path={"/recipe-author"} element={<AuthorPage />} />
+            {/* <Route path={"/recipe-author"} element={<AuthorPage />} /> */}
             <Route path={"/recipe-search"} element={<SearchPage />} />
             <Route path={"/user-profile"} element={<UserProfilePage />} />
           </Routes>
         </>
-      ) : (
-        <Routes>
+      {/* ) : ( */}
+        {/* <Routes> */}
  {/* <Route path={"/"} element={<Navbar />} /> */}
-          <Route path={"/"} element={<Begin />} />
-          <Route path={"/login"} element={<LoginPage />} />
-          <Route path={"/register"} element={<RegisterPage />} />
+          {/* <Route path={"/"} element={<Begin />} /> */}
+          {/* <Route path={"/login"} element={<LoginPage />} /> */}
+          {/* <Route path={"/register"} element={<RegisterPage />} /> */}
 
-        </Routes>
-      )
-      }
+        {/* </Routes> */}
+      {/* ) */}
+      {/* } */}
     </>
   );
 }
