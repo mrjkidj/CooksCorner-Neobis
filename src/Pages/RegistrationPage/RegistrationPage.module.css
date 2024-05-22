@@ -1,0 +1,128 @@
+/* RegisterPage.module.css */
+
+:root {
+    --Background: #f0f0f0;
+    --Primary: #FA9E31;
+  }
+  
+  .register_page {
+    width: 100%;
+    height: 100vh;
+    background: var(--Background);
+  }
+  
+  .register_page_greeting {
+    background: var(--Primary);
+    height: 30%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register_form_wrapper {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #ffffff;
+  }
+  
+  .register_form_wrapper form {
+    text-align: left;
+    color: var(--Primary);
+    margin: 0 auto;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Уменьшаем расстояние между инпутами еще больше */
+  }
+  
+  .input_block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Уменьшаем расстояние между инпутами еще больше */
+  }
+  
+  .input_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .input_wrapper img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  
+  .input_wrapper button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    margin-right: 24px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 6px;
+    padding-right: 44px;
+    border: 1px solid var(--Primary);
+    border-radius: 28px;
+    box-sizing: border-box;
+    padding-left: 24px;
+  }
+  
+  form button {
+    color: #ffffff;
+  }
+  
+  form label {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  form .valid_error {
+    color: red;
+  }
+  
+  .link_to_register {
+    font-size: 14px;
+    text-align: center;
+  
+  }
+  
+  @media screen and (max-width: 425px) {
+    .register_page .register_page_greeting {
+      align-items: flex-start;
+      padding: 0 20px;
+    }
+  
+    .register_form_wrapper {
+      padding: 0 20px;
+    }
+  
+    .register_form_wrapper form {
+      width: 100%;
+      gap: 1rem;
+      font-size: 14px;
+    }
+  
+    .register_form_wrapper form label {
+      font-size: 1rem;
+    }
+  
+    .register_form_wrapper .input_block {
+      gap: 5px;
+    }
+  }
+  
+  
+  

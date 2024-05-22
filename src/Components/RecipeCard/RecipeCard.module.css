@@ -1,0 +1,45 @@
+.recipeCard {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .recipePhoto {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .recipeCardInfo {
+    margin-top: 12px;
+  }
+  
+  .recipeName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .recipeAuthor {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .recipeCardRatings {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .recipeCardRatings p {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .recipeCardRatings img {
+    margin-right: 4px;
+  }
+  
