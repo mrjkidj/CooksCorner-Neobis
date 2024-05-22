@@ -1,4 +1,4 @@
-.authorPage {
+/* .authorPage {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,5 +81,54 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+  }
+   */
+   .authorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .authorInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .info p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
   }
   

@@ -1,30 +1,20 @@
-import { IRecipeInfo } from '../../Interfaces/IRecipe';
-import styles from './RecipeCard.module.css';
-import like_icon from '../../Assets/icons/RecipeIcons/white/like_icon.svg';
-import saved_icon from '../../Assets/icons/RecipeIcons/white/saved_icon.svg';
+import { IAuthorRecipe } from "../../Interfaces/IRecipe";
+import styles from "./RecipeCard.module.css";
 
-interface IRecipeCardProps {
-  recipe: IRecipeInfo;
-  onFavorite?: (slug: string) => void;
-  onLike?: (slug: string) => void;
+interface RecipeCardProps {
+  recipe: IAuthorRecipe;
 }
 
-const RecipeCard: React.FC<IRecipeCardProps> = ({ recipe }) => {
+const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <div className={styles.recipeCard}>
-      <img className={styles.recipePhoto} src={recipe.photo} alt="" />
-      <div className={styles.recipeCardInfo}>
-        <p className={styles.recipeName}>{recipe.title}</p>
-        <p className={styles.recipeAuthor}>by {recipe.author}</p>
-        <div className={styles.recipeCardRatings}>
-          <p>
-            <img src={like_icon} alt="like" />
-            {recipe.likes}
-          </p>
-          <p>
-            <img src={saved_icon} alt="save" />
-            {recipe.savedCount}
-          </p>
+      <img className={styles.image} src={recipe.image} alt={recipe.title} />
+      <div className={styles.info}>
+        <h3>{recipe.title}</h3>
+        {/* <p>by {recipe.author}</p> Если в IAuthorRecipe нет author, можно удалить эту строку */}
+        <div className={styles.stats}>
+          <span>{recipe.likes} лайков</span>
+          <span>{recipe.comments} комментариев</span>
         </div>
       </div>
     </div>
@@ -32,3 +22,4 @@ const RecipeCard: React.FC<IRecipeCardProps> = ({ recipe }) => {
 };
 
 export default RecipeCard;
+

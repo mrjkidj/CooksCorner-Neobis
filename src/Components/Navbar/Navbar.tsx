@@ -22,21 +22,17 @@ const Navbar: React.FC = () => {
       <div className={s.cooks_corner_link}>
         <img src={cooks_corner_link} alt="cooks_corner_link" />
       </div>
+       {/* Добавляем разделитель */}
       <div className={s.navbar_links}>
         <HomeLink to={"/"} />
         <SearchLink to={"/search"} />
         <ProfileLink to={"/profile"} />
-        <button onClick={() => handleLogOut()} type="button" className={s.logout_button}>
-          <img
-            src={logout_link}
-            alt="logout_link"
-            onClick={() => handleLogOut}
-          />
-        </button>
       </div>
+      <button onClick={handleLogOut} type="button" className={s.logout_button}>
+        <img src={logout_link} alt="logout_link" />
+      </button>
     </div>
   );
 };
 
 export default Navbar;
-

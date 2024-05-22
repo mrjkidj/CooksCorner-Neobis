@@ -7,6 +7,7 @@ export interface IUser {
   followersCount: number;
   followingCount: number;
   isFollowing?: boolean;
+  recipes: IAuthorRecipe[]; 
 }
 
 export interface IRecipe {
@@ -39,7 +40,11 @@ export interface IRecipeInfo {
   category: string;
   author: string;
   savedCount: number;
+  comments: number; 
+  image: string;
+  favorites: number; 
 }
+
 
 export interface IRecipeDetails {
   slug: string;
@@ -49,6 +54,7 @@ export interface IRecipeDetails {
   difficulty: string;
   category: string;
   preparation_time: string;
+  photo: string;
 }
 
 export interface IAuthorRecipe {
@@ -57,6 +63,7 @@ export interface IAuthorRecipe {
   image: string;
   likes: number;
   favorites: number;
+  comments: number; 
 }
 
 export interface IRecipeCardProps {
