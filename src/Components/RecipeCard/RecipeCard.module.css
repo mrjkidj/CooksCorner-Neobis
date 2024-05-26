@@ -1,45 +1,40 @@
 .recipeCard {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .recipePhoto {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .recipeCardInfo {
-    margin-top: 12px;
-  }
-  
-  .recipeName {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .recipeAuthor {
-    color: #666;
-    font-size: 14px;
-  }
-  
-  .recipeCardRatings {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-  }
-  
-  .recipeCardRatings p {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-  }
-  
-  .recipeCardRatings img {
-    margin-right: 4px;
-  }
-  
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #e64a19;
+}

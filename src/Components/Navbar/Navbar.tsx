@@ -23,9 +23,9 @@ const Navbar: React.FC = () => {
         <img src={cooks_corner_link} alt="cooks_corner_link" />
       </div>
       <div className={s.navbar_links}>
-        <HomeLink to={"/"} />
-        <SearchLink to={"/search"} />
-        <ProfileLink to={"/profile"} />
+        <HomeLink to="/" />
+        <SearchLink to="/search" />
+        <ProfileLink to="/profile" />
       </div>
       <button onClick={handleLogOut} type="button" className={s.logout_button}>
         <img src={logout_link} alt="logout_link" />

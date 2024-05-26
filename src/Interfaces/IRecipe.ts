@@ -7,9 +7,8 @@ export interface IUser {
   followersCount: number;
   followingCount: number;
   isFollowing?: boolean;
-  recipes: IAuthorRecipe[]; 
+  recipes: IAuthorRecipe[];
 }
-
 export interface IRecipe {
   id: number;
   photo: string;
@@ -28,6 +27,8 @@ export interface IIngredient {
   unit: string;
   recipe_id: string;
 }
+
+
 
 export interface IRecipeInfo {
   slug: string;
@@ -55,19 +56,21 @@ export interface IRecipeDetails {
   category: string;
   preparation_time: string;
   photo: string;
+  likes: number;
+  favorites: number; // Добавлено свойство favorites
+  ingredients: IIngredient[]; // Добавлено свойство ingredients
 }
-
 export interface IAuthorRecipe {
   slug: string;
   title: string;
   image: string;
   likes: number;
   favorites: number;
-  comments: number; 
+  comments: number;
 }
 
 export interface IRecipeCardProps {
-  recipe: IRecipeInfo;
+  recipe: IAuthorRecipe;
   onFavorite?: (slug: string) => void;
   onLike?: (slug: string) => void;
 }

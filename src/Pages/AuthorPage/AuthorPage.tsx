@@ -81,15 +81,39 @@
 
 
 
+// AuthorPage.tsx
+
+// AuthorPage.tsx
+// AuthorPage.tsx
+import  { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getAuthorInfo } from "../../Api/Api";
 import { IUser } from "../../Interfaces/IRecipe";
 import RecipeCard from "../../Components/RecipeCard/RecipeCard";
 import styles from "./AuthorPage.module.css";
 
-interface AuthorPageProps {
-  author: IUser;
-}
+const AuthorPage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const [author, setAuthor] = useState<IUser | null>(null);
 
-const AuthorPage: React.FC<AuthorPageProps> = ({ author }) => {
+  useEffect(() => {
+    if (slug) {
+      fetchAuthorInfo(slug);
+    }
+  }, [slug]);
+
+  const fetchAuthorInfo = async (slug: string) => {
+    try {
+      const response = await getAuthorInfo(slug);
+      setAuthor(response.data);
+    } catch (error) {
+      console.error("Ошибка при получении информации об авторе:", error);
+    }
+  };
+  if (!author) {
+    return <div>Загрузка...</div>;
+  }
+
   return (
     <div className={styles.authorPage}>
       <div className={styles.authorInfo}>
@@ -98,14 +122,14 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ author }) => {
           <h2>{author.username}</h2>
           <p>{author.bio}</p>
           <div className={styles.stats}>
-            <span>{author.postsCount} posts</span>
-            <span>{author.followersCount} followers</span>
-            <span>{author.followingCount} following</span>
+            <span>{author.postsCount} постов</span>
+            <span>{author.followersCount} подписчиков</span>
+            <span>{author.followingCount} подписок</span>
           </div>
         </div>
       </div>
       <div className={styles.recipes}>
-        {author.recipes.map(recipe => (
+        {author.recipes.map((recipe) => (
           <RecipeCard key={recipe.slug} recipe={recipe} />
         ))}
       </div>
@@ -114,3 +138,9 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ author }) => {
 };
 
 export default AuthorPage;
+
+
+
+
+
+

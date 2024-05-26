@@ -1,0 +1,30 @@
+/* DetailRecipePage.module.css */
+.recipeDetailPage {
+    padding: 20px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .info {
+    margin-top: 20px;
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .interactions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  

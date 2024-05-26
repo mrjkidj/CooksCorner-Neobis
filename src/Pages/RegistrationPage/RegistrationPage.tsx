@@ -14,6 +14,7 @@ import user_icon from "../../Assets/icons/FormIcons/user_icon.svg";
 import { useState } from "react";
 import { ApiRegistration, UserRegister } from "../../Api/Api";
 
+// Схема валидации
 const schema = yup.object({
   username: yup.string().required("Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
@@ -29,8 +30,7 @@ const schema = yup.object({
 
 export default function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [confirmPasswordVisible, setConfirmPasswordVisible] =
-    useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ export default function RegisterPage() {
       const response = await ApiRegistration(data);
       console.log("Registration successful:", response.data);
       dispatch(login(response.data));
-      navigate("/");
+      navigate("/"); // Перенаправление пользователя на главную страницу после успешной регистрации
     } catch (error: any) {
       if (error.response) {
         console.error("Ошибка регистрации:", error.response.data);
@@ -121,7 +121,7 @@ export default function RegisterPage() {
             <p className={s.valid_error}>{errors.password?.message}</p>
           </div>
           <div className={s.input_block}>
-            <label htmlFor="password">Re-Password</label>
+            <label htmlFor="confirmPassword">Re-Password</label>
             <div className={s.input_wrapper}>
               <Input
                 type={confirmPasswordVisible ? "text" : "password"}
@@ -130,9 +130,7 @@ export default function RegisterPage() {
                 {...register("confirmPassword")}
               />
               <button
-                onClick={() =>
-                  setConfirmPasswordVisible(!confirmPasswordVisible)
-                }
+                onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
                 type="button"
               >
                 <img
@@ -151,4 +149,4 @@ export default function RegisterPage() {
       </div>
     </div>
   );
-} 
+}
