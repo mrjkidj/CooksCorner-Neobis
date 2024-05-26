@@ -14,13 +14,12 @@ import user_icon from "../../Assets/icons/FormIcons/user_icon.svg";
 import { useState } from "react";
 import { ApiRegistration, UserRegister } from "../../Https/Https";
 
-// Схема валидации
 const schema = yup.object({
   username: yup.string().required("Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
+    .min(6, "Password must be at least 8 characters")
     .required("Password is required"),
   confirmPassword: yup
     .string()
@@ -31,6 +30,7 @@ const schema = yup.object({
 export default function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const [password, setPassword] = useState(""); // Новое состояние для отслеживания пароля
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ export default function RegisterPage() {
       const response = await ApiRegistration(data);
       console.log("Registration successful:", response.data);
       dispatch(login(response.data));
-      navigate("/"); // Перенаправление пользователя на главную страницу после успешной регистрации
+      navigate("/"); 
     } catch (error: any) {
       if (error.response) {
         console.error("Ошибка регистрации:", error.response.data);
@@ -110,6 +110,7 @@ export default function RegisterPage() {
                 id="password"
                 placeholder="Enter your Password"
                 {...register("password")}
+                onChange={(e) => setPassword(e.target.value)} 
               />
               <button
                 type="button"
@@ -141,6 +142,22 @@ export default function RegisterPage() {
             </div>
             <p className={s.valid_error}>{errors.confirmPassword?.message}</p>
           </div>
+
+          <ul className="text-start list-disc mx-6 text-[#767676] font-medium text-xs">
+            <li className={`${!password ? "text-gray-500" : password.length >= 8 && password.length <= 15 ? "text-green-500" : "text-red-500"}`}>
+              От 8 до 15 символов {password && password.length >= 8 && password.length <= 15 ? "✅" : "❌"}
+            </li>
+            <li className={`${!password ? "text-gray-500" : /[a-z]/.test(password) && /[A-Z]/.test(password) ? "text-green-500" : "text-red-500"}`}>
+              Строчные и прописные буквы {password && /[a-z]/.test(password) && /[A-Z]/.test(password) ? "✅" : "❌"}
+            </li>
+            <li className={`${!password ? "text-gray-500" : /[0-9]/.test(password) ? "text-green-500" : "text-red-500"}`}>
+              Минимум 1 цифра {password && /[0-9]/.test(password) ? "✅" : "❌"}
+            </li>
+            <li className={`${!password ? "text-gray-500" : /[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/.test(password) ? "text-green-500" : "text-red-500"}`}>
+              Минимум 1 спецсимвол (!, #, $...) {password && /[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/.test(password) ? "✅" : "❌"}
+            </li>
+          </ul>
+
           <Button type="submit">Sign Up</Button>
         </form>
         <div className={s.link_to_register}>
