@@ -57,8 +57,8 @@ export interface IRecipeDetails {
   preparation_time: string;
   photo: string;
   likes: number;
-  favorites: number; // Добавлено свойство favorites
-  ingredients: IIngredient[]; // Добавлено свойство ingredients
+  favorites: number; 
+  ingredients: IIngredient[]; 
 }
 export interface IAuthorRecipe {
   slug: string;

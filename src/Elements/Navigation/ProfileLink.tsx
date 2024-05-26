@@ -19,7 +19,6 @@ const ProfileLink: React.FC<{ to: string }> = ({ to }) => {
         />
         <mask
           id="mask0_2138_727"
-          /* style="mask-type:alpha" */
           maskUnits="userSpaceOnUse"
           x="16"
           y="16"

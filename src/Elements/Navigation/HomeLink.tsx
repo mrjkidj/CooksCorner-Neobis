@@ -19,7 +19,6 @@ const HomeLink: React.FC<{to: string}> = ({to}) => {
         />
         <mask
           id="mask0_2138_714"
-          /* style="mask-type:alpha" */
           maskUnits="userSpaceOnUse"
           x="16"
           y="16"

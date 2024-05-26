@@ -13,7 +13,6 @@ const CooksCornerLink: React.FC<{ to: string }> = ({ to }) => {
       >
         <mask
           id="mask0_2138_715"
-          /* style="mask-type:alpha" */
           maskUnits="userSpaceOnUse"
           x="6"
           y="0"
