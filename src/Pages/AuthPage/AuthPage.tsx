@@ -11,7 +11,7 @@ import visible from "../../Assets/icons/visible_iconsvg.svg";
 import notvisible from "../../Assets/icons/notvisible_icon.svg";
 import email_icon from "../../Assets/icons/FormIcons/email_icon.svg";
 import { useState } from "react";
-import { ApiAuth } from "../../Api/Api";
+import { ApiAuth } from "../../Https/Https";
 
 export default function LoginPage() {
   const dispatch = useDispatch();

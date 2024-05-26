@@ -87,7 +87,7 @@
 // AuthorPage.tsx
 import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getAuthorInfo } from "../../Api/Api";
+import { getAuthorInfo } from "../../Https/Https";
 import { IUser } from "../../Interfaces/IRecipe";
 import RecipeCard from "../../Components/RecipeCard/RecipeCard";
 import styles from "./AuthorPage.module.css";

@@ -12,7 +12,7 @@ import notvisible from "../../Assets/icons/notvisible_icon.svg";
 import email_icon from "../../Assets/icons/FormIcons/email_icon.svg";
 import user_icon from "../../Assets/icons/FormIcons/user_icon.svg";
 import { useState } from "react";
-import { ApiRegistration, UserRegister } from "../../Api/Api";
+import { ApiRegistration, UserRegister } from "../../Https/Https";
 
 // Схема валидации
 const schema = yup.object({

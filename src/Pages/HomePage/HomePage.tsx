@@ -67,7 +67,7 @@
 // HomePage.tsx
 import { useEffect, useState } from "react";
 import RecipeCard from "../../Components/RecipeCard/RecipeCard";
-import { getAllRecipes } from "../../Api/Api";
+import { getAllRecipes } from "../../Https/Https";
 import { IRecipeInfo } from "../../Interfaces/IRecipe";
 import styles from "./HomePage.module.css";
 

@@ -28,7 +28,7 @@
 // RecipeDetailPage.tsx
 import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getRecipeBySlug } from "../../Api/Api";
+import { getRecipeBySlug } from "../../Https/Https";
 import { IRecipeDetails } from "../../Interfaces/IRecipe";
 import styles from "./DetailRecipePage.module.css";
 
