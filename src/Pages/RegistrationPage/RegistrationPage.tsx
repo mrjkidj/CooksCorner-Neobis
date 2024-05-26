@@ -14,6 +14,7 @@ import user_icon from "../../Assets/icons/FormIcons/user_icon.svg";
 import { useState } from "react";
 import { ApiRegistration, UserRegister } from "../../Https/Https";
 
+// Схема валидации
 const schema = yup.object({
   username: yup.string().required("Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
@@ -30,7 +31,7 @@ const schema = yup.object({
 export default function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-  const [password, setPassword] = useState(""); // Новое состояние для отслеживания пароля
+  const [password, setPassword] = useState(""); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ export default function RegisterPage() {
                 id="password"
                 placeholder="Enter your Password"
                 {...register("password")}
-                onChange={(e) => setPassword(e.target.value)} 
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               />
               <button
                 type="button"
